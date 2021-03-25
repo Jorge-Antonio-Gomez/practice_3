@@ -16,6 +16,8 @@ body {
 
 	height: 85%;
 	max-height: 1024px;
+
+	background: rgb(226, 226, 226);
 }
 
 	#main_body {
