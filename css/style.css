@@ -97,7 +97,7 @@ menu {
 
 .section_content {
 	margin: 0 0 -0.05em .35em;
-	padding: 1.5em 2em 0.05em 2em;
+	padding: 1.5em 0 0.05em 2em;
 	border-left: solid rgba(0, 0, 0, 0.157) 1px;
 }
 
