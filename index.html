@@ -20,30 +20,47 @@
 
 <menu>
 
-	<h1>Probando Git y Github <span class="span_h">Y otras cositas</span></h1>
+	<h1>Prácticas y cosas chungas <span class="span_h">Primera parte</span></h1>
 
-	<p>Veamos, en esta página vamos a hacer experimentos raros con HTML, CSS, JavaScript y Git. Cada sección estará divida por un <b>&lt;h2&gt;</b>. Y el contenido por una caja <b>&lt;div&gt;</b> llamada <b>section_content</b> de la siguiente manera:</p>
+	<div class="section_content">
 
-	<span class="container_code"> 
-		<pre><code
->&lt;h2&gt;Título de la sección&lt;/h2&gt;
+		<p>Veamos, en esta página vamos a hacer experimentos raros con HTML, CSS, JavaScript y Git. Cada sección estará divida por un <b>&lt;h3&gt;</b>. Y el contenido por una caja <b>&lt;div&gt;</b> llamada <b>section_content</b> de la siguiente manera:</p>
+
+		<span class="container_code"> 
+			<pre><code
+>&lt;h3&gt;Título de la sección&lt;/h3&gt;
 
 &lt;div class="section_content"&gt;
-  &lt;!-- Contenido Aquí --&gt;
+	&lt;!-- Contenido Aquí --&gt;
 &lt;/div&gt;</code></pre>
-	</span>
+		</span>
 
-	<p>Teniendo eso en Mente... ¡ARRANQUEMOS!</p>
+		<p>Para los subtitulos de contenido con prefijo "•", utilizaremos un <b>&lt;h2&gt;</b>.</p>
+		
+		<p>Teniendo eso en Mente... ¡ARRANQUEMOS!</p>
+
+	</div>
+
+	<h2>Probando Git y Github</h2>
+
+	<div class="section_content">
+		<p>Sección de entrenamiento para usar Git y GitHub con una terminal.</p>
+		<p>El contenido de aprendizaje se encuentra en <a href="https://platzi.com/" target="_blank">Platzi</a>, en la siguiente liga: <a href="https://platzi.com/cursos/git-github/" target="_blank">https://platzi.com/cursos/git-github/</a></p>
+	</div>
 
 	<!-- Inicio del código de la actividad -->
 	
-	<h2>Git <span class="span_h">Reset y Checkout</span></h2>
+	<h3>Git <span class="span_h">Reset y Checkout</span></h3>
 	<div class="section_content">
 		<p>Ambos sirven para "volver en el tiempo". Para regresar a un punto específico en la historia de nuestro proyecto.</p>
 		<p><b>Reset:</b> Sirve para reiniciar el log de cambios a un commit en específico. Si se usa el atributo <i>--hard</i> no se puede volver a los commit subsecuentes.</p>
 		<p><b>Checkout:</b> Sirve para observar los archivos y su estado en cualquier commit del log de cambios. Para volver a la versión actual <span><i>(HEAD)</i></span> basta con escribir <i>"git checkout master"</i>.</p>
 	</div>
 	
+	<!-- Tabline -->
+
+	<h3>Git <span class="span_h">merge</span></h3>
+
 	<!-- Final del código de la actividad -->
 
 </menu>
