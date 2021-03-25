@@ -51,6 +51,11 @@ span {
 	font-weight: 400;
 }
 
+	.span_h::before {
+		content: "| ";
+		font-size: 1.2em;
+	}
+
 p {
 	margin: 0 0 1em;
 	font-size: 24px;
