@@ -1,3 +1,8 @@
+:root {
+	/* --h-color-back: rgba(223, 103, 33, 0.198); */
+	--h-color-back: linear-gradient(90deg, rgba(83, 83, 83, 0.1) 20%, rgba(223, 103, 33, 0) 60%);
+}
+
 body, * {
 	box-sizing: border-box;
 	margin: 0;
@@ -24,6 +29,9 @@ body {
 h1 {
 	padding-bottom: 0.25em;
 	border-bottom: solid rgba(0, 0, 0, 0.157) 1px;
+
+	background: var(--h-color-back);
+
 }
 
 	h1::before {
@@ -32,9 +40,14 @@ h1 {
 	}
 
 h2 {
+	/* margin-top: -0.25em; */
+	padding-top: 0.25em;
+
 	padding-bottom: 0.25em;
+
 	border-bottom: solid rgba(0, 0, 0, 0.157) 1px;
 	font-size: 1.8em;
+	background: var(--h-color-back);
 
 }
 
@@ -48,6 +61,9 @@ h3 {
 
 	border-bottom: solid rgba(0, 0, 0, 0.157) 1px;
 	font-size: 1.5em;
+
+	background: var(--h-color-back);
+
 }
 
 	h3::before {
