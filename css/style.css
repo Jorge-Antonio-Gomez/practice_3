@@ -234,4 +234,28 @@ details[open] > summary::before {
 	}
 }
 
+/*  */
+
+figure {
+	margin: 0 auto;
+
+	width: 70%;
+	overflow: hidden;
+
+	border-radius: 0.3em;
+}
+
+figure img {
+	width: 100%;
+	height: 100%;
+	
+	object-fit: cover;
+
+	display: block;
+}
+
+.white_border_img {
+	border: solid #FCFCFC 15px;
+}
+
 /* Inicio del código de la actividad */

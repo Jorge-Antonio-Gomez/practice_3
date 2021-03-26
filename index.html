@@ -90,6 +90,13 @@
 
 		<p>Recordemos que un <i>commit</i> es una declaración de cambios de nuestro proyecto en el repositorio. Con él se genera un <i>hash</i> de siete digitos que lo identifica. Entonces podemos decir que cada <i>commit</i> es una versión nueva de nuestro proyecto.</p>
 
+		<p>Estos dos comandos se pueden unir en uno sólo siempre y cuando no se hayan creado nuevos archivos en el repositorio. Esto se hace de la siguiente manera:</p>
+
+		<span class="container_code">
+			<pre><code class="linux_code"
+>git commit -am "Primer lanzamiento del sitio"</code></pre>
+		</span>
+
 		<h4>Lanzamiento del repositorio local al repositorio remoto</h4>
 
 		<p>Una vez que tenemos nuestros cambios listos y los <i>commits</i> hechos. Es necesario enviarlo al servidor de un sistema de control de versiones como <b>github</b>, <b>gitlab</b> o <b>bitbucket</b> para tenerlos en la nube y poder trabajar con otras peronas.</p>
@@ -103,6 +110,18 @@
 
 		<p>el parametro <i>-u origin</i> le indica a la terminal que lo envíe a <b>github</b> y se debe realizar sólo una vez. <i>Master</i> quiere decir que el contenido se almacenará en la rama principal. Después de haber hecho el primer lanzamiento, con escribir <b><i>"git push"</i></b> bastará para lanzar los cambios.</p>
 
+	</div>
+
+	<!-- Tabline -->
+	
+	<h3>Git <span class="span_h">Flujo de trabajo</span></h3>
+
+	<div class="section_content">
+		<p>Cuando creas un repositorio de Git con <i>"git init"</i>. A parte de crear el repositorio, creas un área intermedia entre el espacio de trabajo (tu computadora) y el repositorio. A esta área se le conoce como <i>staging area</i>. Una forma de ilustrar esto es la siguiente:</p>
+
+		<figure>
+			<img class="white_border_img" src="images/workflow.jpg" alt="Imagen del flujo de trabajo" width="600px" height="auto" loading="lazy">
+		</figure>
 	</div>
 
 	<!-- Tabline -->
@@ -143,9 +162,32 @@
 	</div>
 	
 	<!-- Tabline -->
+	
+	<h3>Git <span class="span_h">Ver cambios entre versiones</span></h3>
 
-	<h3>Hola mamá</h3>
+	<div class="section_content">
+		<p>Git es una herramienta muy poderosa. Ya que gracias a ella podemos ver los cambios entre una versión y otra (entre un <i>commit</i> y otro). Aunque también podemos ver un <i>log</i>de todos los cambios hechos desde la creación del repositorio. Para hacer eso, tenemos dos <i>keywords</i>: <i>show</i> y <i>diff</i>.</p>
 
+		<p><b>Show</b>: Sirve para ver el log de cambios desde que se inicializó el repositorio.</p>
+
+		<p><b>Diff</b>: Nos ayuda a ver los cambios efectuados entre un <i>commit</i> y otro. Para ejecutarlo es necesario contar con el <i>hash</i> de los dos <i>commits</i>, recuerda que puedes obtenerlos con <i>"git show"</i>. Para usarlo se usa la siguiente sintaxis (sin las comillas):</p>
+
+		<span class="container_code">
+			<pre><code class="linux_code">git diff 'commit_1' 'commit_2'</code></pre>
+		</span>
+
+		<p>Un ejemplo real es el siguiente:</p>
+
+		<span class="container_code">
+			<pre><code class="linux_code">git diff e9a7ba0 e8b373a</code></pre>
+		</span>
+
+		<p>Recuerda que el orden de los <i>commits</i> es muy importante. Porque si, por ejemplo, pones primero un <i>commit</i> más reciente, y después un <i>commit</i> antiguo, los cambios se mostrarán al revés. Es decir, las líneas añadidas al final apareceran como lineas eliminadas, y viceversa.</p>
+
+	</div>
+
+	<!-- Tabline -->
+	
 </details>
 
 <!-- Final del código de la actividad -->
