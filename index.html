@@ -24,45 +24,131 @@
 
 	<div class="section_content">
 
-		<p>Veamos, en esta página vamos a hacer experimentos raros con HTML, CSS, JavaScript y Git. Cada sección estará divida por un <b>&lt;h3&gt;</b>. Y el contenido por una caja <b>&lt;div&gt;</b> llamada <b>section_content</b> de la siguiente manera:</p>
+		<p>Veamos, en esta página vamos a hacer experimentos raros con HTML, CSS, JavaScript y Git. Cada sección estará divida por un <b>&lt;h2&gt;</b>, y cada subsección por un <b>&lt;h3&gt;</b>. Mientras que el contenido estará dividido por una caja <b>&lt;div&gt;</b> llamada <b>section_content</b>. Todo ello estará en menús desplegables para navegar más fácil. Se arrancará el código de la siguiente manera:</p>
 
 		<span class="container_code"> 
 			<pre><code
->&lt;h3&gt;Título de la sección&lt;/h3&gt;
+>&lt;details&gt;
+	&lt;summary&gt;&lt;h2&gt;Título de la sección&lt;/h2&gt;&lt;/summary&gt;
+	&lt;div class="section_content"&gt;
+		&lt;!-- Descripción de la sección --&gt;	
+	&lt;/div&gt;
 
-&lt;div class="section_content"&gt;
-	&lt;!-- Contenido Aquí --&gt;
-&lt;/div&gt;</code></pre>
+	&lt;h3&gt;Título de la subsección&lt;/h3&gt;
+	&lt;div class="section_content"&gt;
+		&lt;!-- Contenido de la subsección --&gt;
+	&lt;/div&gt;
+&lt;/details&gt;</code></pre>
 		</span>
-
-		<p>Para los subtitulos de contenido con prefijo "•", utilizaremos un <b>&lt;h2&gt;</b>.</p>
 		
 		<p>Teniendo eso en Mente... ¡ARRANQUEMOS!</p>
 
 	</div>
 
-	<h2>Probando Git y Github</h2>
+	<!-- Inicio del código de la actividad -->
+
+	<details open>
+	<summary><h2>Probando Git y Github</h2></summary>
 
 	<div class="section_content">
 		<p>Sección de entrenamiento para usar Git y GitHub con una terminal.</p>
 		<p>El contenido de aprendizaje se encuentra en <a href="https://platzi.com/" target="_blank">Platzi</a>, en la siguiente liga: <a href="https://platzi.com/cursos/git-github/" target="_blank">https://platzi.com/cursos/git-github/</a></p>
 	</div>
 
-	<!-- Inicio del código de la actividad -->
+	<!-- Tabline -->
+
+	<h3>Uso básico de Git <span class="span_h">Creación de repositiorios, confirmaciones y <i>push</i></span></h3>
 	
+	<div class="section_content">
+
+		<h4>Crear un repositorio nuevo.</h4>
+
+		<p>Para ello debemos inicializar nuestra terminal de <i>linux</i> o <i>git bash</i>. Después de haber instalado Git (en caso de linux) se indica el siguiente comando dentro del directorio que queremos convertir en repositorio:</p>
+
+		<span class="container_code"> 
+			<pre><code class="linux_code"
+>git init</code></pre>
+		</span>
+
+		<h4>Lanzamiento de los primeros cambios</h4>
+
+		<p>Para lanzar el contenido de nuestro directorio, primero debemos decirle a git que el archivo existe. Para ello ejecutamos el siguiente comando (incluido el punto):</p>
+
+		<span class="container_code">
+			<pre><code class="linux_code"
+>git add .</code></pre>
+		</span>
+
+		<p>Con esto le estamos diciendo que busque el directorio actual completo. Por último guardamos los cambios en la rama maestra (llamada <i>master</i>). Esto lo hacemos con un <i>commit</i>, de la siguiente manera:</p>
+
+		<span class="container_code">
+			<pre><code class="linux_code"
+>git commit -m "Primer lanzamiento del sitio"</code></pre>
+		</span>
+
+		<p>El atributo <i>-m</i> indica que le vamos a asignar un mensaje al <i>commit</i>, y el texto dentro de las comillas es el mensaje en sí mismo.</p>
+
+		<p>Recordemos que un <i>commit</i> es una declaración de cambios de nuestro proyecto en el repositorio. Con él se genera un <i>hash</i> de siete digitos que lo identifica. Entonces podemos decir que cada <i>commit</i> es una versión nueva de nuestro proyecto.</p>
+
+		<h4>Lanzamiento del repositorio local al repositorio remoto</h4>
+
+		<p>Una vez que tenemos nuestros cambios listos y los <i>commits</i> hechos. Es necesario enviarlo al servidor de un sistema de control de versiones como <b>github</b>, <b>gitlab</b> o <b>bitbucket</b> para tenerlos en la nube y poder trabajar con otras peronas.</p>
+
+		<p>Para enviarlo al servidor indicamos el siguiete comando en nuestra terminal:</p>
+
+		<span class="container_code">
+			<pre><code class="linux_code"
+>git push -u origin master</code></pre>
+		</span>
+
+		<p>el parametro <i>-u origin</i> le indica a la terminal que lo envíe a <b>github</b> y se debe realizar sólo una vez. <i>Master</i> quiere decir que el contenido se almacenará en la rama principal. Después de haber hecho el primer lanzamiento, con escribir <b><i>"git push"</i></b> bastará para lanzar los cambios.</p>
+
+	</div>
+
+	<!-- Tabline -->
+
 	<h3>Git <span class="span_h">Reset y Checkout</span></h3>
+	
 	<div class="section_content">
 		<p>Ambos sirven para "volver en el tiempo". Para regresar a un punto específico en la historia de nuestro proyecto.</p>
-		<p><b>Reset:</b> Sirve para reiniciar el log de cambios a un commit en específico. Si se usa el atributo <i>--hard</i> no se puede volver a los commit subsecuentes.</p>
-		<p><b>Checkout:</b> Sirve para observar los archivos y su estado en cualquier commit del log de cambios. Para volver a la versión actual <span><i>(HEAD)</i></span> basta con escribir <i>"git checkout master"</i>.</p>
+		
+		<p><b>Reset:</b> Sirve para reiniciar el log de cambios a un <i>commit</i> en específico. Si se usa el atributo <i>--hard</i> no se puede volver a los <i>commits</i> subsecuentes.</p>
+		
+		<p><b>Checkout:</b> Sirve para observar los archivos y su estado en cualquier <i>commit</i> del log de cambios. Para volver a la versión actual <span><i>(HEAD)</i></span> basta con escribir el siguiente comando:</p>
+
+		<span class="container_code">
+			<pre><code class="linux_code"
+>git checkout master</code></pre>
+		</span>
 	</div>
 	
 	<!-- Tabline -->
 
 	<h3>Git <span class="span_h">merge</span></h3>
+	
+	<div class="section_content">
+		<p>El comando <i>merge</i> sirve para unir una rama secundaria del repositorio con otra rama. Lo más común es unirla a la rama maestra (<i>master</i>). Para unir dos ramas con <i>merge</i> es necesario posicionarse sobre la una de las ramas a unir con el siguiente comando:</p>
 
-	<!-- Final del código de la actividad -->
+		<span class="container_code">
+			<pre><code class="linux_code"
+				>git switch rama_2</code></pre>
+		</span>
+		
+		<p>Una vez posicionados en una de las ramas, debemos aplicar el comando <i>merge</i> para unirlas indicando el nombre de la segunda rama. En este caso, <i>master</i>.</p>
+		
+		<span class="container_code">
+			<pre><code class="linux_code"
+				>git merge master</code></code></pre>
+			</span>
+	</div>
+	
+	<!-- Tabline -->
 
+	<h3>Hola mamá</h3>
+
+</details>
+
+<!-- Final del código de la actividad -->
 </menu>
 <script src="./script.js"></script>
 </body>
