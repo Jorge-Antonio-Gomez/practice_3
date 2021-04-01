@@ -146,19 +146,34 @@
 	<h3>Git <span class="span_h">merge</span></h3>
 	
 	<div class="section_content">
-		<p>El comando <i>merge</i> sirve para unir una rama secundaria del repositorio con otra rama. Lo más común es unirla a la rama maestra (<i>master</i>). Para unir dos ramas con <i>merge</i> es necesario posicionarse sobre la una de las ramas a unir con el siguiente comando:</p>
+		<p>El comando <i>merge</i> sirve para unir una rama del repositorio con otra. Lo más común es unirla a la rama maestra (<i>master</i>). Para unir dos ramas con <i>merge</i> es necesario posicionarse sobre la rama principal con el siguiente comando:</p>
 
 		<span class="container_code">
 			<pre><code class="linux_code"
-				>git switch rama_2</code></pre>
+				>git switch master</code></pre>
 		</span>
 		
+		<p>Es importante que recuerdes posicionarte sobre tu rama principal, porque la fusión se llevará a cabo sobre ella. En nuestro caso es <i>master</i>.</p>
+
 		<p>Una vez posicionados en una de las ramas, debemos aplicar el comando <i>merge</i> para unirlas indicando el nombre de la segunda rama. En este caso, <i>master</i>.</p>
 		
 		<span class="container_code">
 			<pre><code class="linux_code"
-				>git merge master</code></code></pre>
-			</span>
+				>git merge rama_2</code></code></pre>
+		</span>
+
+		<p>Una forma gráfica de ver nuestra fusión es la siguiente:</p>
+
+		<figure>
+			<img src="./images/master_merge.svg" alt="merge en master" width="600px" height="auto" loading="lazy">
+		</figure>
+
+		<p>Pero, <b>¿por qué es importante posicionarme en la rama master?</b> Es cierto que te puedes posicionar con <i>switch</i> en la rama secundaria (<i>rama_2</i>) en lugar de master. Pero no te lo recomiendo porque ahora tu rama principal dejará de ser master y <i>rama_2</i> pasará a ser la principal. Como puedes ver en la siguiente imagen.</p>
+
+		<figure>
+			<img src="./images/rama_2_merge.svg" alt="merge en master" width="600px" height="auto" loading="lazy">
+		</figure>
+
 	</div>
 	
 	<!-- Tabline -->
