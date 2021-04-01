@@ -304,11 +304,13 @@ figure img {
 	}
 
 	header {
-		height: 100px;
+		min-height: 100px;
+		height: auto;
 	}
 
 	header p {
 		margin: 0;
+		padding: 16px 12px;
 		width: 100%;
 		text-align: center;
 	}
@@ -340,9 +342,11 @@ figure img {
 
 	h1, h2, h3 {
 		margin-left: -16px;
-		width: 100%;
+		margin-right: 0;
+		width: calc(100% + 32px);
 
 		border-radius: 0;
+		background: rgba(83, 83, 83, 0.1);
 	}
 
 	h1::after,
