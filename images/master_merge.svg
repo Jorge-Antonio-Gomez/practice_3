@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 320" style="enable-background:new 0 0 1024 320;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#999999;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:url(#SVGID_1_);stroke-width:10;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:url(#SVGID_2_);stroke-width:10;stroke-miterlimit:10;}
+	.st3{fill:#2E58A6;}
+	.st4{font-family:'SegoeUI-Bold';}
+	.st5{font-size:37.1583px;}
+	.st6{fill:#1B407A;}
+	.st7{font-family:'SegoeUI-SemiboldItalic';}
+	.st8{font-size:24.548px;}
+	.st9{fill:#59103A;}
+</style>
+<line class="st0" x1="487.88" y1="100.06" x2="263.88" y2="100.06"/>
+<line class="st0" x1="487.88" y1="219.94" x2="263.88" y2="219.94"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="187.8791" y1="100.0626" x2="263.8827" y2="100.0626">
+	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	<stop  offset="0.6332" style="stop-color:#999999"/>
+	<stop  offset="1" style="stop-color:#000000"/>
+</linearGradient>
+<line class="st1" x1="263.88" y1="100.06" x2="187.88" y2="100.06"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="187.8791" y1="219.9372" x2="263.8827" y2="219.9372">
+	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	<stop  offset="0.6332" style="stop-color:#999999"/>
+	<stop  offset="1" style="stop-color:#000000"/>
+</linearGradient>
+<line class="st2" x1="263.88" y1="219.94" x2="187.88" y2="219.94"/>
+<line class="st0" x1="711.87" y1="100.06" x2="487.88" y2="100.06"/>
+<circle class="st3" cx="487.88" cy="100.06" r="27.9"/>
+<line class="st0" x1="935.86" y1="100.06" x2="711.87" y2="100.06"/>
+<text transform="matrix(1 0 0 1 60.2404 109.554)" class="st3 st4 st5">master</text>
+<text transform="matrix(1 0 0 1 677.0612 159.9998)" class="st6 st7 st8">merge</text>
+<path class="st0" d="M711.87,100.06c0,0-25.16,0.04-52.1,0.04c-26.95,0-40.6,30.65-59.9,59.9s-32.96,59.94-59.94,59.94
+	s-52.06,0-52.06,0"/>
+<circle class="st9" cx="487.88" cy="219.94" r="27.9"/>
+<circle class="st3" cx="263.88" cy="100.06" r="27.9"/>
+<circle class="st9" cx="263.88" cy="219.94" r="27.9"/>
+<text transform="matrix(1 0 0 1 60.2404 229.429)" class="st9 st4 st5">rama_2</text>
+<circle class="st6" cx="711.87" cy="100.06" r="27.9"/>
+<circle class="st6" cx="935.86" cy="100.06" r="27.9"/>
+</svg>
