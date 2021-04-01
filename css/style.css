@@ -371,4 +371,44 @@ figure img {
 
 }
 
+@media print {
+
+	menu {
+		padding-top: 150px;	
+	}
+
+	header {
+		min-height: 100px;
+		height: auto;
+		box-shadow: none;
+	}
+
+	header p {
+		margin: 0;
+		padding: 16px 12px;
+		width: 100%;
+		text-align: center;
+	}
+
+	header p span {
+		margin: 0;
+		display: block;
+		
+		float: inherit;
+	}
+
+	body,
+	menu,
+	main,
+	html {
+		background-color: white;
+	}
+
+	h1, h2, h3, h4, h5,
+	p, span {
+		color: black;
+	}
+
+}
+
 /* Inicio del código de la actividad */

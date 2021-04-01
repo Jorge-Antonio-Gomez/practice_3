@@ -70,7 +70,7 @@
 
 		<h4>Crear un repositorio nuevo.</h4>
 
-		<p>Para ello debemos inicializar nuestra terminal de <i>linux</i> o <i>git bash</i>. Después de haber instalado Git (en caso de linux) se indica el siguiente comando dentro del directorio que queremos convertir en repositorio:</p>
+		<p>Para ello debemos inicializar nuestra terminal de <i>linux</i> o <i>git bash</i>. Después de haber instalado Git (en caso de <i>linux</i>) se indica el siguiente comando dentro del directorio que queremos convertir en repositorio:</p>
 
 		<span class="container_code"> 
 			<pre><code class="linux_code"
@@ -79,14 +79,14 @@
 
 		<h4>Lanzamiento de los primeros cambios</h4>
 
-		<p>Para lanzar el contenido de nuestro directorio, primero debemos decirle a git que el archivo existe. Para ello ejecutamos el siguiente comando (incluido el punto):</p>
+		<p>Para lanzar el contenido de nuestro directorio, primero debemos decirle a <i>git</i> que el archivo existe. Para ello ejecutamos el siguiente comando (incluido el punto):</p>
 
 		<span class="container_code">
 			<pre><code class="linux_code"
 >git add .</code></pre>
 		</span>
 
-		<p>Con esto le estamos diciendo que busque el directorio actual completo. Por último guardamos los cambios en la rama maestra (llamada <i>master</i>). Esto lo hacemos con un <i>commit</i>, de la siguiente manera:</p>
+		<p>Con esto le estamos diciendo que busque el directorio actual completo. Por último, guardamos los cambios en la rama maestra (llamada <i>master</i>). Esto lo hacemos con un <i>commit</i>, de la siguiente manera:</p>
 
 		<span class="container_code">
 			<pre><code class="linux_code"
@@ -95,7 +95,7 @@
 
 		<p>El atributo <i>-m</i> indica que le vamos a asignar un mensaje al <i>commit</i>, y el texto dentro de las comillas es el mensaje en sí mismo.</p>
 
-		<p>Recordemos que un <i>commit</i> es una declaración de cambios de nuestro proyecto en el repositorio. Con él se genera un <i>hash</i> de siete digitos que lo identifica. Entonces podemos decir que cada <i>commit</i> es una versión nueva de nuestro proyecto.</p>
+		<p>Recordemos que un <i>commit</i> es una declaración de cambios de nuestro proyecto en el repositorio. Con él se genera un <i>hash</i> de siete dígitos que lo identifica. Entonces podemos decir que cada <i>commit</i> es una versión nueva de nuestro proyecto.</p>
 
 		<p>Estos dos comandos se pueden unir en uno sólo siempre y cuando no se hayan creado nuevos archivos en el repositorio. Esto se hace de la siguiente manera:</p>
 
@@ -175,7 +175,7 @@
 			<img src="./images/master_merge.svg" alt="merge en master" width="600px" height="auto" loading="lazy">
 		</figure>
 
-		<p>Pero, <b>¿por qué es importante posicionarme en la rama master?</b> Es cierto que te puedes posicionar con <i>switch</i> en la rama secundaria (<i>rama_2</i>) en lugar de <i>master</i>. Pero no te lo recomiendo porque ahora tu rama principal dejará de ser <i>master</i> y <i>rama_2</i> pasará a ser la principal. Puedes ver claramanete como quedaría tu repositorio en la siguiente imagen.</p>
+		<p>Pero, <b>¿por qué es importante posicionarme en la rama master?</b> Es cierto que te puedes posicionar con <i>switch</i> en la rama secundaria (<i>rama_2</i>) en lugar de <i>master</i>. Pero no te lo recomiendo porque ahora tu rama principal dejará de ser <i>master</i> y <i>rama_2</i> pasará a ser la principal. Puedes ver claramente como quedaría tu repositorio en la siguiente imagen.</p>
 
 		<figure>
 			<img src="./images/rama_2_merge.svg" alt="merge en master" width="600px" height="auto" loading="lazy">
@@ -188,7 +188,7 @@
 	<h3>Git <span class="span_h">Ver cambios entre versiones</span></h3>
 
 	<div class="section_content">
-		<p>Git es una herramienta muy poderosa. Ya que gracias a ella podemos ver los cambios entre una versión y otra (entre un <i>commit</i> y otro). Aunque también podemos ver un <i>log</i>de todos los cambios hechos desde la creación del repositorio. Para hacer eso, tenemos dos <i>keywords</i>: <i>show</i> y <i>diff</i>.</p>
+		<p>Git es una herramienta muy poderosa. Ya que gracias a ella podemos ver los cambios entre una versión y otra (entre un <i>commit</i> y otro). Aunque también podemos ver un <i>log</i> de todos los cambios hechos desde la creación del repositorio. Para hacer eso, tenemos dos <i>keywords</i>: <i>show</i> y <i>diff</i>.</p>
 
 		<p><b>Show</b>: Sirve para ver el log de cambios desde que se inicializó el repositorio.</p>
 
@@ -204,7 +204,7 @@
 			<pre><code class="linux_code">git diff e9a7ba0 e8b373a</code></pre>
 		</span>
 
-		<p>Recuerda que el orden de los <i>commits</i> es muy importante. Porque si, por ejemplo, pones primero un <i>commit</i> más reciente, y después un <i>commit</i> antiguo, los cambios se mostrarán al revés. Es decir, las líneas añadidas al final apareceran como lineas eliminadas, y viceversa.</p>
+		<p>Recuerda que el orden de los <i>commits</i> es muy importante. Porque si, por ejemplo, pones primero un <i>commit</i> más reciente, y después un <i>commit</i> antiguo, los cambios se mostrarán al revés. Es decir, las líneas añadidas al final aparecerán como líneas eliminadas, y viceversa.</p>
 
 	</div>
 
