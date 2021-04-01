@@ -330,8 +330,8 @@ figure img {
 	}
 
 	menu {
-		padding-left: 1em;
-		padding-right: 1em;
+		padding-left: 2em;
+		padding-right: 2em;
 	}
 
 
@@ -344,13 +344,23 @@ figure img {
 	}
 
 	h1, h2, h3 {
-		margin-left: -16px;
+		padding-left: 1em;
+		padding-right: 1em;
+		margin-left: -32px;
 		margin-right: 0;
-		width: calc(100% + 32px);
+		width: calc(64px + 100%);
 
 		border-radius: 0;
 		background: rgba(83, 83, 83, 0.1);
 	}
+
+		h1 {
+			font-size: 24px;
+		}
+
+		h2, h3 {
+			font-size: 20px;
+		}
 
 	h1::after,
 	h2::after,
@@ -358,12 +368,18 @@ figure img {
 		display: none;
 	}
 
+
+	details > summary > h2 {
+		padding-left: 38px;
+	}
+	
+
 	details > summary::before {
 		content: "▼";
 
 		position: absolute;
 			top: calc(50% - 0.7em);
-			left: -7px;
+			left: -13px;
 	}
 
 	.section_content figure {
