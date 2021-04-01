@@ -207,6 +207,7 @@ pre code {
 
 /* Linux Code */
 
+
 .linux_code::before {
 	content: "$ ";
 	color:#28cf70;
