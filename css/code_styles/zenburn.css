@@ -5,13 +5,38 @@ based on dark.css by Ivan Sagalaev
 
 */
 
-.hljs {
+.container_code {
   display: block;
   overflow-x: auto;
   padding: 1.2em 0em 1.2em 0.5em;
   background: #3f3f3f;
   color: #dcdcdc;
 }
+
+
+.container_code pre{
+	/* margin: 0 0 1em; */
+	overflow:visible;
+}
+
+	.container_code * {
+		font-family: monospace, 'Courier New', Courier;
+		font-size: 16px;
+
+		tab-size: 4;
+
+		border-radius: 0.3em;
+
+	}
+
+/* .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1.2em 0em 1.2em 0.5em;
+  background: #3f3f3f;
+  color: #dcdcdc;
+} */
+
 
 @media screen and (max-width: 480px){
   .hljs {
