@@ -8,7 +8,7 @@ based on dark.css by Ivan Sagalaev
 .container_code {
   display: block;
   overflow-x: auto;
-  padding: 1.2em 0em 1.2em 0.5em;
+  padding: 1.2rem 0rem 1.2rem 0.5rem;
   background: #3f3f3f;
   color: #dcdcdc;
 
