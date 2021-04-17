@@ -87,7 +87,7 @@
 				<p>Para ello debemos inicializar nuestra terminal de <i>linux</i> o <i>git bash</i>. Después de haber instalado Git (en caso de <i>linux</i>) se indica el siguiente comando dentro del directorio que queremos convertir en repositorio:</p>
 
 				<span class="container_code"> 
-					<pre><code class="linux_code"
+					<pre><code class="linux_code properties"
 		>git init</code></pre>
 				</span>
 
@@ -96,14 +96,14 @@
 				<p>Para lanzar el contenido de nuestro directorio, primero debemos decirle a <i>git</i> que el archivo existe. Para ello ejecutamos el siguiente comando (incluido el punto):</p>
 
 				<span class="container_code">
-					<pre><code class="linux_code"
+					<pre><code class="linux_code properties"
 		>git add .</code></pre>
 				</span>
 
 				<p>Con esto le estamos diciendo que busque el directorio actual completo. Por último, guardamos los cambios en la rama maestra (llamada <i>master</i>). Esto lo hacemos con un <i>commit</i>, de la siguiente manera:</p>
 
 				<span class="container_code">
-					<pre><code class="linux_code"
+					<pre><code class="linux_code properties"
 		>git commit -m "Primer lanzamiento del sitio"</code></pre>
 				</span>
 
@@ -114,7 +114,7 @@
 				<p>Estos dos comandos se pueden unir en uno sólo siempre y cuando no se hayan creado nuevos archivos en el repositorio. Esto se hace de la siguiente manera:</p>
 
 				<span class="container_code">
-					<pre><code class="linux_code"
+					<pre><code class="linux_code properties"
 		>git commit -am "Primer lanzamiento del sitio"</code></pre>
 				</span>
 
@@ -125,7 +125,7 @@
 				<p>Para enviarlo al servidor indicamos el siguiete comando en nuestra terminal:</p>
 
 				<span class="container_code">
-					<pre><code class="linux_code"
+					<pre><code class="linux_code properties"
 		>git push -u origin master</code></pre>
 				</span>
 
@@ -161,7 +161,7 @@
 				<p><b>Checkout:</b> Sirve para observar los archivos y su estado en cualquier <i>commit</i> del log de cambios. Para volver a la versión actual <span><i>(HEAD)</i></span> basta con escribir el siguiente comando:</p>
 
 				<span class="container_code">
-					<pre><code class="linux_code"
+					<pre><code class="linux_code properties"
 		>git checkout master</code></pre>
 				</span>
 			</div>
@@ -176,7 +176,7 @@
 				<p>El comando <i>merge</i> sirve para unir una rama del repositorio con otra. Lo más común es unirla a la rama maestra (<i>master</i>). Para unir dos ramas con <i>merge</i> es necesario posicionarse sobre la rama principal con el siguiente comando:</p>
 
 				<span class="container_code">
-					<pre><code class="linux_code"
+					<pre><code class="linux_code properties"
 						>git switch master</code></pre>
 				</span>
 				
@@ -185,7 +185,7 @@
 				<p>Una vez posicionados en una de las ramas, debemos aplicar el comando <i>merge</i> para unirlas indicando el nombre de la segunda rama. En este caso, <i>master</i>.</p>
 				
 				<span class="container_code">
-					<pre><code class="linux_code"
+					<pre><code class="linux_code properties"
 						>git merge rama_2</code></code></pre>
 				</span>
 
@@ -229,13 +229,13 @@
 				<p><b>Diff</b>: Nos ayuda a ver los cambios efectuados entre un <i>commit</i> y otro. Para ejecutarlo es necesario contar con el <i>hash</i> de los dos <i>commits</i>, recuerda que puedes obtenerlos con <i>"git show"</i>. Para usarlo se usa la siguiente sintaxis (sin las comillas):</p>
 
 				<span class="container_code">
-					<pre><code class="linux_code">git diff 'commit_1' 'commit_2'</code></pre>
+					<pre><code class="linux_code properties">git diff 'commit_1' 'commit_2'</code></pre>
 				</span>
 
 				<p>Un ejemplo real es el siguiente:</p>
 
 				<span class="container_code">
-					<pre><code class="linux_code">git diff e9a7ba0 e8b373a</code></pre>
+					<pre><code class="linux_code properties">git diff e9a7ba0 e8b373a</code></pre>
 				</span>
 
 				<p>Recuerda que el orden de los <i>commits</i> es muy importante. Porque si, por ejemplo, pones primero un <i>commit</i> más reciente, y después un <i>commit</i> antiguo, los cambios se mostrarán al revés. Es decir, las líneas añadidas al final aparecerán como líneas eliminadas, y viceversa.</p>
