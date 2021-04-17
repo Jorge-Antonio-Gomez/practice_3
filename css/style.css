@@ -182,9 +182,48 @@ span {
 		font-size: 1.2em;
 	}
 
-p {
+menu p, li{
 	margin: 0 0 1em;
 	font-size: 18px;
+}
+
+menu blockquote {
+	padding: 1em 1em 1em 2em;
+	margin: 0 0 1em 1em;
+
+	background: rgba(0, 0, 0, 0.05);
+	font-style: italic;
+
+	position: relative;
+	border-radius: 0.3rem;
+
+	overflow: hidden;
+}
+
+menu blockquote::before {
+	content: '';
+
+	width: 0.3em;
+	height: 100%;
+
+	position: absolute;
+		top: 0;
+		left: 0;
+
+	background: rgba(0, 0, 0, 0.1);
+}
+
+	menu blockquote a {
+		margin: -.5em 0 0 1em;
+		width: auto;
+		display: block;
+
+		text-decoration: none;
+	}
+
+menu a,
+menu a:visited {
+	color: rgb(141, 141, 141);
 }
 
 pre code {
@@ -207,6 +246,15 @@ pre code {
 		border-radius: 0.3em;
 
 	}
+
+li {
+	margin-left: 2em;
+	margin-bottom: .5em;
+}
+
+li:last-child {
+	margin-bottom: 1em;
+}
 
 /* Linux Code */
 
@@ -241,6 +289,23 @@ details > summary::before {
 	animation-timing-function: ease;
 	animation-fill-mode: both;
 }
+
+details details > summary::before {
+	content: "▼";
+	animation: none;
+}
+
+	details details > summary h3::before {
+		visibility: hidden;
+	}
+
+details details[open] > summary::before {
+	content: "";
+}
+
+	details details[open] > summary h3::before {
+		visibility: visible;
+	}
 
 summary::marker {
 	content: "";
@@ -301,6 +366,13 @@ figure img {
 
 .white_border_img {
 	border: solid #FCFCFC 15px;
+}
+
+figure figcaption {
+	text-align: right;
+	color: rgb(168, 168, 168);
+	font-size: 0.9rem;
+	width: 100%;
 }
 
 
@@ -381,7 +453,7 @@ figure img {
 		content: "▼";
 
 		position: absolute;
-			top: calc(50% - 0.7em);
+			top: calc(0.7em);
 			left: -13px;
 	}
 

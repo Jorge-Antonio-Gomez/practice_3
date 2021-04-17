@@ -7,9 +7,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- Sintaxis del código de colores (highlight.js)-->
+	
+	<!-- Hosted -->
+	<!-- <link rel="stylesheet"
+	href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script> -->
+
+	<!-- Local -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 	<link rel="stylesheet" href="css/code_styles/zenburn.css">
+
 	<!-- Fin -->
 
 	<title>Practice 3</title>
@@ -36,15 +44,19 @@
 		<span class="container_code"> 
 			<pre><code
 >&lt;details&gt;
+
 	&lt;summary&gt;&lt;h2&gt;Título de la sección&lt;/h2&gt;&lt;/summary&gt;
 	&lt;div class="section_content"&gt;
 		&lt;!-- Descripción de la sección --&gt;	
 	&lt;/div&gt;
 
-	&lt;h3&gt;Título de la subsección&lt;/h3&gt;
-	&lt;div class="section_content"&gt;
-		&lt;!-- Contenido de la subsección --&gt;
-	&lt;/div&gt;
+	&lt;details&gt;
+		&lt;summary&gt;&lt;h3&gt;Título de la subsección&lt;/h3&gt;&lt;/summary&gt;
+		&lt;div class="section_content"&gt;
+			&lt;!-- Contenido de la subsección --&gt;
+		&lt;/div&gt;
+	&lt;details&gt;
+
 &lt;/details&gt;</code></pre>
 		</span>
 		
@@ -55,174 +67,312 @@
 	<!-- Inicio del código de la actividad -->
 
 	<details open>
-	<summary><h2>Probando Git y Github</h2></summary>
+
+	<summary><h2>Git y Github</h2></summary>
 
 	<div class="section_content">
 		<p>Sección de entrenamiento para usar Git y GitHub con una terminal.</p>
 		<p>El contenido de aprendizaje se encuentra en <a href="https://platzi.com/" target="_blank">Platzi</a>, en la siguiente liga: <a href="https://platzi.com/cursos/git-github/" target="_blank">https://platzi.com/cursos/git-github/</a></p>
 	</div>
 
-	<!-- Tabline -->
+		<!-- Tabline -->
 
-	<h3>Uso básico de Git <span class="span_h">Creación de repositiorios, confirmaciones y <i>push</i></span></h3>
-	
-	<div class="section_content">
-
-		<h4>Crear un repositorio nuevo.</h4>
-
-		<p>Para ello debemos inicializar nuestra terminal de <i>linux</i> o <i>git bash</i>. Después de haber instalado Git (en caso de <i>linux</i>) se indica el siguiente comando dentro del directorio que queremos convertir en repositorio:</p>
-
-		<span class="container_code"> 
-			<pre><code class="linux_code"
->git init</code></pre>
-		</span>
-
-		<h4>Lanzamiento de los primeros cambios</h4>
-
-		<p>Para lanzar el contenido de nuestro directorio, primero debemos decirle a <i>git</i> que el archivo existe. Para ello ejecutamos el siguiente comando (incluido el punto):</p>
-
-		<span class="container_code">
-			<pre><code class="linux_code"
->git add .</code></pre>
-		</span>
-
-		<p>Con esto le estamos diciendo que busque el directorio actual completo. Por último, guardamos los cambios en la rama maestra (llamada <i>master</i>). Esto lo hacemos con un <i>commit</i>, de la siguiente manera:</p>
-
-		<span class="container_code">
-			<pre><code class="linux_code"
->git commit -m "Primer lanzamiento del sitio"</code></pre>
-		</span>
-
-		<p>El atributo <i>-m</i> indica que le vamos a asignar un mensaje al <i>commit</i>, y el texto dentro de las comillas es el mensaje en sí mismo.</p>
-
-		<p>Recordemos que un <i>commit</i> es una declaración de cambios de nuestro proyecto en el repositorio. Con él se genera un <i>hash</i> de siete dígitos que lo identifica. Entonces podemos decir que cada <i>commit</i> es una versión nueva de nuestro proyecto.</p>
-
-		<p>Estos dos comandos se pueden unir en uno sólo siempre y cuando no se hayan creado nuevos archivos en el repositorio. Esto se hace de la siguiente manera:</p>
-
-		<span class="container_code">
-			<pre><code class="linux_code"
->git commit -am "Primer lanzamiento del sitio"</code></pre>
-		</span>
-
-		<h4>Lanzamiento del repositorio local al repositorio remoto</h4>
-
-		<p>Una vez que tenemos nuestros cambios listos y los <i>commits</i> hechos. Es necesario enviarlo al servidor de un sistema de control de versiones como <b>github</b>, <b>gitlab</b> o <b>bitbucket</b> para tenerlos en la nube y poder trabajar con otras peronas.</p>
-
-		<p>Para enviarlo al servidor indicamos el siguiete comando en nuestra terminal:</p>
-
-		<span class="container_code">
-			<pre><code class="linux_code"
->git push -u origin master</code></pre>
-		</span>
-
-		<p>el parametro <i>-u origin</i> le indica a la terminal que lo envíe a <b>github</b> y se debe realizar sólo una vez. <i>Master</i> quiere decir que el contenido se almacenará en la rama principal. Después de haber hecho el primer lanzamiento, con escribir <b><i>"git push"</i></b> bastará para lanzar los cambios.</p>
-
-	</div>
-
-	<!-- Tabline -->
-	
-	<h3>Git <span class="span_h">Flujo de trabajo</span></h3>
-
-	<div class="section_content">
-		<p>Cuando creas un repositorio de Git con <i>"git init"</i>. A parte de crear el repositorio, creas un área intermedia entre el espacio de trabajo (tu computadora) y el repositorio. A esta área se le conoce como <i>staging area</i>. Una forma de ilustrar esto es la siguiente:</p>
-
-		<figure>
-			<img class="white_border_img" src="images/workflow.jpg" alt="Imagen del flujo de trabajo" width="600px" height="auto" loading="lazy">
-		</figure>
-	</div>
-
-	<!-- Tabline -->
-
-	<h3>Git <span class="span_h">Reset y Checkout</span></h3>
-	
-	<div class="section_content">
-		<p>Ambos sirven para "volver en el tiempo". Para regresar a un punto específico en la historia de nuestro proyecto.</p>
+		<details>
+				<summary><h3>Creación de repositorios, confirmaciones y Push <span class="span_h">Uso básico de Git</span></h3></summary>
 		
-		<p><b>Reset:</b> Sirve para reiniciar el log de cambios a un <i>commit</i> en específico. Si se usa el atributo <i>--hard</i> no se puede volver a los <i>commits</i> subsecuentes.</p>
-		
-		<p><b>Checkout:</b> Sirve para observar los archivos y su estado en cualquier <i>commit</i> del log de cambios. Para volver a la versión actual <span><i>(HEAD)</i></span> basta con escribir el siguiente comando:</p>
+			<div class="section_content">
 
-		<span class="container_code">
-			<pre><code class="linux_code"
->git checkout master</code></pre>
-		</span>
-	</div>
-	
-	<!-- Tabline -->
+				<h4>Crear un repositorio nuevo.</h4>
 
-	<h3>Git <span class="span_h">merge</span></h3>
-	
-	<div class="section_content">
-		<p>El comando <i>merge</i> sirve para unir una rama del repositorio con otra. Lo más común es unirla a la rama maestra (<i>master</i>). Para unir dos ramas con <i>merge</i> es necesario posicionarse sobre la rama principal con el siguiente comando:</p>
+				<p>Para ello debemos inicializar nuestra terminal de <i>linux</i> o <i>git bash</i>. Después de haber instalado Git (en caso de <i>linux</i>) se indica el siguiente comando dentro del directorio que queremos convertir en repositorio:</p>
 
-		<span class="container_code">
-			<pre><code class="linux_code"
-				>git switch master</code></pre>
-		</span>
-		
-		<p>Es importante que recuerdes posicionarte sobre tu rama principal, porque la fusión se llevará a cabo sobre ella. En nuestro caso es <i>master</i>.</p>
+				<span class="container_code"> 
+					<pre><code class="linux_code"
+		>git init</code></pre>
+				</span>
 
-		<p>Una vez posicionados en una de las ramas, debemos aplicar el comando <i>merge</i> para unirlas indicando el nombre de la segunda rama. En este caso, <i>master</i>.</p>
-		
-		<span class="container_code">
-			<pre><code class="linux_code"
-				>git merge rama_2</code></code></pre>
-		</span>
+				<h4>Lanzamiento de los primeros cambios</h4>
 
-		<p>Una forma gráfica de ver nuestra fusión es la siguiente:</p>
+				<p>Para lanzar el contenido de nuestro directorio, primero debemos decirle a <i>git</i> que el archivo existe. Para ello ejecutamos el siguiente comando (incluido el punto):</p>
 
-		<figure>
-			<img src="./images/master_merge.svg" alt="merge en master" width="600px" height="auto" loading="lazy">
-		</figure>
+				<span class="container_code">
+					<pre><code class="linux_code"
+		>git add .</code></pre>
+				</span>
 
-		<p>Pero, <b>¿por qué es importante posicionarme en la rama master?</b> Es cierto que te puedes posicionar con <i>switch</i> en la rama secundaria (<i>rama_2</i>) en lugar de <i>master</i>. Pero no te lo recomiendo porque ahora tu rama principal dejará de ser <i>master</i> y <i>rama_2</i> pasará a ser la principal. Puedes ver claramente como quedaría tu repositorio en la siguiente imagen.</p>
+				<p>Con esto le estamos diciendo que busque el directorio actual completo. Por último, guardamos los cambios en la rama maestra (llamada <i>master</i>). Esto lo hacemos con un <i>commit</i>, de la siguiente manera:</p>
 
-		<figure>
-			<img src="./images/rama_2_merge.svg" alt="merge en master" width="600px" height="auto" loading="lazy">
-		</figure>
+				<span class="container_code">
+					<pre><code class="linux_code"
+		>git commit -m "Primer lanzamiento del sitio"</code></pre>
+				</span>
 
-	</div>
+				<p>El atributo <i>-m</i> indica que le vamos a asignar un mensaje al <i>commit</i>, y el texto dentro de las comillas es el mensaje en sí mismo.</p>
+
+				<p>Recordemos que un <i>commit</i> es una declaración de cambios de nuestro proyecto en el repositorio. Con él se genera un <i>hash</i> de siete dígitos que lo identifica. Entonces podemos decir que cada <i>commit</i> es una versión nueva de nuestro proyecto.</p>
+
+				<p>Estos dos comandos se pueden unir en uno sólo siempre y cuando no se hayan creado nuevos archivos en el repositorio. Esto se hace de la siguiente manera:</p>
+
+				<span class="container_code">
+					<pre><code class="linux_code"
+		>git commit -am "Primer lanzamiento del sitio"</code></pre>
+				</span>
+
+				<h4>Lanzamiento del repositorio local al repositorio remoto</h4>
+
+				<p>Una vez que tenemos nuestros cambios listos y los <i>commits</i> hechos. Es necesario enviarlo al servidor de un sistema de control de versiones como <b>github</b>, <b>gitlab</b> o <b>bitbucket</b> para tenerlos en la nube y poder trabajar con otras peronas.</p>
+
+				<p>Para enviarlo al servidor indicamos el siguiete comando en nuestra terminal:</p>
+
+				<span class="container_code">
+					<pre><code class="linux_code"
+		>git push -u origin master</code></pre>
+				</span>
+
+				<p>el parametro <i>-u origin</i> le indica a la terminal que lo envíe a <b>github</b> y se debe realizar sólo una vez. <i>Master</i> quiere decir que el contenido se almacenará en la rama principal. Después de haber hecho el primer lanzamiento, con escribir <b><i>"git push"</i></b> bastará para lanzar los cambios.</p>
+
+			</div>
+		</details>
 
 		<!-- Tabline -->
-	
-		<h3>Github <span class="span_h">Pull Request</span></h3>
-	
+		
+		<details>
+				<summary><h3>Flujo de trabajo <span class="span_h">Git</span></h3></summary>
+
+			<div class="section_content">
+				<p>Cuando creas un repositorio de Git con <i>"git init"</i>. A parte de crear el repositorio, creas un área intermedia entre el espacio de trabajo (tu computadora) y el repositorio. A esta área se le conoce como <i>staging area</i>. Una forma de ilustrar esto es la siguiente:</p>
+
+				<figure>
+					<img class="white_border_img" src="images/workflow.jpg" alt="Imagen del flujo de trabajo" width="600px" height="auto" loading="lazy">
+				</figure>
+			</div>
+		</details>
+
+		<!-- Tabline -->
+
+		<details>
+				<summary><h3>Reset y Checkout <span class="span_h">Git</span></h3></summary>
+		
+			<div class="section_content">
+				<p>Ambos sirven para "volver en el tiempo". Para regresar a un punto específico en la historia de nuestro proyecto.</p>
+				
+				<p><b>Reset:</b> Sirve para reiniciar el log de cambios a un <i>commit</i> en específico. Si se usa el atributo <i>--hard</i> no se puede volver a los <i>commits</i> subsecuentes.</p>
+				
+				<p><b>Checkout:</b> Sirve para observar los archivos y su estado en cualquier <i>commit</i> del log de cambios. Para volver a la versión actual <span><i>(HEAD)</i></span> basta con escribir el siguiente comando:</p>
+
+				<span class="container_code">
+					<pre><code class="linux_code"
+		>git checkout master</code></pre>
+				</span>
+			</div>
+		</details>
+		
+		<!-- Tabline -->
+
+		<details>
+				<summary><h3>Merge <span class="span_h">Git</span></h3></summary>
+		
+			<div class="section_content">
+				<p>El comando <i>merge</i> sirve para unir una rama del repositorio con otra. Lo más común es unirla a la rama maestra (<i>master</i>). Para unir dos ramas con <i>merge</i> es necesario posicionarse sobre la rama principal con el siguiente comando:</p>
+
+				<span class="container_code">
+					<pre><code class="linux_code"
+						>git switch master</code></pre>
+				</span>
+				
+				<p>Es importante que recuerdes posicionarte sobre tu rama principal, porque la fusión se llevará a cabo sobre ella. En nuestro caso es <i>master</i>.</p>
+
+				<p>Una vez posicionados en una de las ramas, debemos aplicar el comando <i>merge</i> para unirlas indicando el nombre de la segunda rama. En este caso, <i>master</i>.</p>
+				
+				<span class="container_code">
+					<pre><code class="linux_code"
+						>git merge rama_2</code></code></pre>
+				</span>
+
+				<p>Una forma gráfica de ver nuestra fusión es la siguiente:</p>
+
+				<figure>
+					<img src="./images/master_merge.svg" alt="merge en master" width="600px" height="auto" loading="lazy">
+				</figure>
+
+				<p>Pero, <b>¿por qué es importante posicionarme en la rama master?</b> Es cierto que te puedes posicionar con <i>switch</i> en la rama secundaria (<i>rama_2</i>) en lugar de <i>master</i>. Pero no te lo recomiendo porque ahora tu rama principal dejará de ser <i>master</i> y <i>rama_2</i> pasará a ser la principal. Puedes ver claramente como quedaría tu repositorio en la siguiente imagen.</p>
+
+				<figure>
+					<img src="./images/rama_2_merge.svg" alt="merge en master" width="600px" height="auto" loading="lazy">
+				</figure>
+
+			</div>
+		</details>
+
+		<!-- Tabline -->
+
+		<details>
+				<summary><h3>Pull Request <span class="span_h">Github</span></h3></summary>
+
+			<div class="section_content">
+				<p><b>Pull Request</b> es la base de la colaboración <i>open source</i>. Es una forma de pedir permiso para hacer un <i>merge</i> a una rama del repositorio. Esto es util cuando el usuario que quiere hacer el <i>merge</i>, no pertenece al equipo de desarrollo.</p>
+
+				<p>Podemos decir que es un <i>merge</i>, que se completa hasta que algún administrador del repositorio da permiso para para que se ejecute.</p>
+			</div>
+		</details>
+		
+		<!-- Tabline -->
+		
+		<details>
+			<summary><h3>Ver cambios entre versiones <span class="span_h">Git</span></h3></summary>
+
+			<div class="section_content">
+				<p>Git es una herramienta muy poderosa. Ya que gracias a ella podemos ver los cambios entre una versión y otra (entre un <i>commit</i> y otro). Aunque también podemos ver un <i>log</i> de todos los cambios hechos desde la creación del repositorio. Para hacer eso, tenemos dos <i>keywords</i>: <i>show</i> y <i>diff</i>.</p>
+
+				<p><b>Show</b>: Sirve para ver el log de cambios desde que se inicializó el repositorio.</p>
+
+				<p><b>Diff</b>: Nos ayuda a ver los cambios efectuados entre un <i>commit</i> y otro. Para ejecutarlo es necesario contar con el <i>hash</i> de los dos <i>commits</i>, recuerda que puedes obtenerlos con <i>"git show"</i>. Para usarlo se usa la siguiente sintaxis (sin las comillas):</p>
+
+				<span class="container_code">
+					<pre><code class="linux_code">git diff 'commit_1' 'commit_2'</code></pre>
+				</span>
+
+				<p>Un ejemplo real es el siguiente:</p>
+
+				<span class="container_code">
+					<pre><code class="linux_code">git diff e9a7ba0 e8b373a</code></pre>
+				</span>
+
+				<p>Recuerda que el orden de los <i>commits</i> es muy importante. Porque si, por ejemplo, pones primero un <i>commit</i> más reciente, y después un <i>commit</i> antiguo, los cambios se mostrarán al revés. Es decir, las líneas añadidas al final aparecerán como líneas eliminadas, y viceversa.</p>
+
+			</div>
+		</details>
+
+		<!-- Tabline -->
+		
+		<details>
+		<summary><h3>Archivos de Repositorio (README.md y .gitignore) <span class="spanGithub_h">Git</span></h3></summary>
+
 		<div class="section_content">
-			<p><b>Pull Request</b> es la base de la colaboración <i>open source</i>. Es una forma de pedir permiso para hacer un <i>merge</i> a una rama del repositorio. Esto es util cuando el usuario que quiere hacer el <i>merge</i>, no pertenece al equipo de desarrollo.</p>
+			<p>Cada repositorio de Git cuenta con archivos especiales que ayudan a los colaboradores o usuarios de los proyectos entender cómo funcionan estos por dentro.</p>
 
-			<p>Podemos decir que es un <i>merge</i>, que se completa hasta que algún administrador del repositorio da permiso para para que se ejecute.</p>
+			<h4>README.md</h4>
+
+			<p>El archivo <i>README.md</i> explica a los usuarios cómo funciona el repositorio, y menciona de forma más detallada que la Descripción de que trata el proyecto.</p>
+
+			<p>Para inicializar un <i>README.md</i> basta con crear un archivo con ese nombre y extensión en la carpeta raíz del repositorio. Recuerda que las siglas de la extensión <i>.md</i> significan <b><i>Markdown</i></b>, y es en ese lenguaje en el que se debe escribir el <i>readme</i>. Aunque se le puede integrar HTML también.</p>
+
+			<h4>.gitignore</h4>
+
+			<p>Este archivo sirve para indicarle a Git que archivos o que tipo de archivos debe ignorar al detectar cambios. Suele usarse para omitir archivos binarios, claves, bases de datos, entre otros.</p>
+
+			<p>Un ejemplo sencillo de uso es el siguiente:</p>
+
+			<span class="container_code">
+				<pre><code class="properties"
+				># Para ignorar todos los archivos con extensión .jpg
+*.jpg
+
+#  Para ignorar la carpeta de imágenes
+images/
+
+# Para evitar que se ignore una imagen dentro de la carpeta images/
+!images/img.jpg</code></pre>
+			</span>
+			
+			<p>Aquí hay algunas <a rel="noreferrer noopener" href="https://opensource.com/article/20/8/dont-ignore-gitignore" target="_blank">reglas básicas</a> que te ayudarán a configurar tu archivo <i>.gitignore</i> correctamente:</p>
+			
+			<ul>
+				<li>Cualquier línea que comience con un hash <b>(#)</b> es un comentario.</li>
+				<li>El carácter <b>\</b> escapa a los caracteres especiales.</li>
+				<li>El carácter <b>/</b> al principio, indica el inicio de una ruta relativa a la carpeta en la que se encuentre el fichero <i>.gitignore</i>. Por ejemplo. Una línea del tipo <i>/config.php</i> ignorará el fichero <i>config.php</i> pero no ignorará <i>web/config.php.</i></li>
+				<li>Un asterisco <b>(*)</b> significa cualquier número de caracteres (cero o más).</li>
+				<li>Dos asteriscos <b>(**)</b> especifican cualquier número de subdirectorios.</li>
+				<li>Un signo de interrogación <b>(?)</b> reemplaza cero o un carácter.</li>
+				<li>Un signo de exclamación <b>(!)</b> designa la regla de inversión (es decir, incluye cualquier archivo que haya sido excluido por un patrón anterior).</li>
+				<li>Las líneas en blanco se ignoran, por lo que puede usarlas para agregar espacio y hacer que su archivo sea más fácil de leer.</li>
+				<li>El carácter <b>/</b> al final sólo se aplicará a carpetas. Por ejemplo. <i>web/</i> ignorará la carpeta <i>web/</i> pero no ignorará un fichero que se llame <i>web</i>.</li>
+			</ul>
+
+			<p>Otro ejemplo:</p>
+			
+			<span class="container_code">
+				<pre><code class="properties"
+					># Ignora los ficheros bg-01.jpg y bg-lt.jpg
+bg-??.jpg
+
+# No ignora los ficheros bg-1.jpg y bg-001.jpg</code></pre>
+			</span>
+			
+			<p>Este patrón ignorará los ficheros cuyos nombres empiezan por <b><i>bg-</i></b>, seguidos exactamente de dos caracteres, y luego vayan seguidos de <b><i>.jpg</i></b>. Por eso el fichero <b><i>bg-1.jpg</i></b> no se ignora, porque entre <b><i>bg-</i></b> y <b><i>.jpg</i></b> no hay dos caracteres, sólo uno. Este ejemplo ilustra que el símbolo <b>(?)</b> no indica un caracter opcional.
+
+			</p>
+
+			<h4>Archivos <i>.gitignore</i> locales frente a globales</h4>
+			
+			<p>
+				Hay dos tipos de archivos <i>.gitignore</i>:
+			</p>
+
+			<ul>
+				<li><b>Local:</b> Ubicado en la raíz de su repositorio de Git, funciona solo en ese repositorio y debe estar comprometido con el repositorio.</li>
+				<li><b>Global:</b> Ubicado en la raíz de su directorio de inicio, afecta a todos los repositorios que usa en su máquina, no necesita ser confirmado.</li>
+			</ul>
+
+			<p>Muchos desarrolladores usan un archivo <i>.gitignore</i> local en su repositorio de proyectos, pero muy pocos usan el archivo <i>.gitignore</i> global. Las ventajas más importantes de usar un archivo global son que no necesitas hacerle <i>commit</i> (confirmarlo) para usarlo y hacer un cambio afecta a todos sus repositorios.</p>
+
+			<p>Para obtener más información sobre <i>.gitignore</i> global puedes seguir el siguiente enlace: <a rel="noreferrer noopener" href="https://sebastiandedeyne.com/setting-up-a-global-gitignore-file/" target="_blank">https://sebastiandedeyne.com/setting-up-a-global-gitignore-file/</a>.</p>
+
 		</div>
+		</details>
+
+		<!-- Tabline -->
+		
+		<details open>
+			<summary><h3>Rebase <span class="span_h">Git</span></h3></summary>
+
+			<div class="section_content">
+				
+				<p>Este comando es muy útil para mover o combinar una secuencia de confirmaciones (<i>commits</i>) en una nueva confirmación base.</p>
+
+				<p><i>Rebase</i> sirve para reescribir el historial de una rama sobre otra. Es importante que recuerdes que usar este comando es una <b>mala práctica</b>, debido a que peudes causar cambios en el historil de la rama principal. Aunque recuerda que puedes usar este comando en repositorios locales o ramas que una se fusionarán a master de forma directa.</p>
+
+				<h4>Comparando <i>Rebase</i> con <i>Merge</i></h4>
+
+				<p>Un merge suele integrar todos los cambios de una rama en un commit que se ejecuta con el comando <i>git merge</i>. Un ejemplo de integración de cambios de una rama a otra con <i>merge</i> es la siguiente:</p>
+
+				<figure><img src="./images/rebase-merge.svg" alt="Ejemplo de merge en sección de rebase"></figure>
+
+				<p>En cambio, <i>rebase</i> fusiona los historiales de cambios de las dos ramas. El <i>log</i> de cambios se vería así:</p>
+
+				<figure><img src="./images/rebase-rebase-01.svg" alt="Ejemplo de rebase"></figure>
+
+				<p>Consideramos que <i>rebase</i> es una <b>mala práctica</b> porque cambia la confirmación base donde se originan los cambios. Con eso queremos decir que el primer <i>commit</i> de la rama a fusionar se cambia de su lugar de origen real.</p>
+
+				<p>Una forma de visualizar el cambio es la siguiente:</p>
+
+				<figure><img src="./images/rebase-rebase-02.svg" alt="Ejemplo de rebase"></figure>
+
+				<blockquote cite="https://platzi.com/comentario/1348679/">
+					<h4>"No reorganices el historial público</h4>
+
+					<p>Nunca debes reorganizar las confirmaciones una vez que se hayan enviado a un repositorio público. La reorganización sustituiría las confirmaciones antiguas por las nuevas y parecería que esa parte del historial de tu proyecto se hubiera desvanecido de repente."</p>
+
+					<a rel="noopener noreferrer" href="https://platzi.com/comentario/1348679/" target="_blank">@diazpolanco13</a>
+				
+				</blockquote>
+
+				<p>Por último recordarte que se debe ejecutar igual que <i>git merge</i>, es decir, sobre la rama principal. Pero antes de eso, es buena idea ejecutarlo desde la rama secundaria para evitar conflictos. De la siguiente manera:</p>
+				<span class="container_code">
+					<pre><code class="linux_code"
+						>git rebase
+git push</code></pre>
+				</span>
+
+
+			</div>
+		</details>
+		
+		<!-- Tabline -->
 	
-	<!-- Tabline -->
-	
-	<h3>Git <span class="span_h">Ver cambios entre versiones</span></h3>
+	</details>
 
-	<div class="section_content">
-		<p>Git es una herramienta muy poderosa. Ya que gracias a ella podemos ver los cambios entre una versión y otra (entre un <i>commit</i> y otro). Aunque también podemos ver un <i>log</i> de todos los cambios hechos desde la creación del repositorio. Para hacer eso, tenemos dos <i>keywords</i>: <i>show</i> y <i>diff</i>.</p>
-
-		<p><b>Show</b>: Sirve para ver el log de cambios desde que se inicializó el repositorio.</p>
-
-		<p><b>Diff</b>: Nos ayuda a ver los cambios efectuados entre un <i>commit</i> y otro. Para ejecutarlo es necesario contar con el <i>hash</i> de los dos <i>commits</i>, recuerda que puedes obtenerlos con <i>"git show"</i>. Para usarlo se usa la siguiente sintaxis (sin las comillas):</p>
-
-		<span class="container_code">
-			<pre><code class="linux_code">git diff 'commit_1' 'commit_2'</code></pre>
-		</span>
-
-		<p>Un ejemplo real es el siguiente:</p>
-
-		<span class="container_code">
-			<pre><code class="linux_code">git diff e9a7ba0 e8b373a</code></pre>
-		</span>
-
-		<p>Recuerda que el orden de los <i>commits</i> es muy importante. Porque si, por ejemplo, pones primero un <i>commit</i> más reciente, y después un <i>commit</i> antiguo, los cambios se mostrarán al revés. Es decir, las líneas añadidas al final aparecerán como líneas eliminadas, y viceversa.</p>
-
-	</div>
-
-	<!-- Tabline -->
-	
-</details>
-
-<!-- Final del código de la actividad -->
+	<!-- Final del código de la actividad -->
 </menu>
 
 <footer>
