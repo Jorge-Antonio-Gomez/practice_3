@@ -11,6 +11,10 @@ based on dark.css by Ivan Sagalaev
   padding: 1.2em 0em 1.2em 0.5em;
   background: #3f3f3f;
   color: #dcdcdc;
+
+  overflow: hidden;
+  border-radius: 0.3em;
+
 }
 
 
@@ -22,11 +26,9 @@ based on dark.css by Ivan Sagalaev
 	.container_code * {
 		font-family: monospace, 'Courier New', Courier;
 		font-size: 16px;
+    color: #dcdcdc;
 
 		tab-size: 4;
-
-		border-radius: 0.3em;
-
 	}
 
 /* .hljs {
