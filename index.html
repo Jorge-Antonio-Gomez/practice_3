@@ -78,7 +78,7 @@
 		<!-- Tabline -->
 
 		<details>
-				<summary><h3>Creación de repositorios, confirmaciones y Push <span class="span_h">Uso básico de Git</span></h3></summary>
+				<summary><h3>Creación de repositorios, confirmaciones y <i>Push</i> <span class="span_h">Uso básico de Git</span></h3></summary>
 		
 			<div class="section_content">
 
@@ -151,7 +151,7 @@
 		<!-- Tabline -->
 
 		<details>
-				<summary><h3>Reset y Checkout <span class="span_h">Git</span></h3></summary>
+				<summary><h3><i>Reset</i> y <i>Checkout</i> <span class="span_h">Regresar a versiones anteriores</span></h3></summary>
 		
 			<div class="section_content">
 				<p>Ambos sirven para "volver en el tiempo". Para regresar a un punto específico en la historia de nuestro proyecto.</p>
@@ -170,7 +170,7 @@
 		<!-- Tabline -->
 
 		<details>
-				<summary><h3>Merge <span class="span_h">Git</span></h3></summary>
+				<summary><h3><i>Merge</i> <span class="span_h">Fusionar ramas</span></h3></summary>
 		
 			<div class="section_content">
 				<p>El comando <i>merge</i> sirve para unir una rama del repositorio con otra. Lo más común es unirla a la rama maestra (<i>master</i>). Para unir dos ramas con <i>merge</i> es necesario posicionarse sobre la rama principal con el siguiente comando:</p>
@@ -207,7 +207,7 @@
 		<!-- Tabline -->
 
 		<details>
-				<summary><h3>Pull Request <span class="span_h">Github</span></h3></summary>
+				<summary><h3><i>Pull Request</i> <span class="span_h">Solicitud de <i>merge</i> en Github</span></h3></summary>
 
 			<div class="section_content">
 				<p><b>Pull Request</b> es la base de la colaboración <i>open source</i>. Es una forma de pedir permiso para hacer un <i>merge</i> a una rama del repositorio. Esto es util cuando el usuario que quiere hacer el <i>merge</i>, no pertenece al equipo de desarrollo.</p>
@@ -219,7 +219,7 @@
 		<!-- Tabline -->
 		
 		<details>
-			<summary><h3>Ver cambios entre versiones <span class="span_h">Git</span></h3></summary>
+			<summary><h3><i>Show</i> y <i>Diff</i> <span class="span_h">Ver cambios entre versiones</span></h3></summary>
 
 			<div class="section_content">
 				<p>Git es una herramienta muy poderosa. Ya que gracias a ella podemos ver los cambios entre una versión y otra (entre un <i>commit</i> y otro). Aunque también podemos ver un <i>log</i> de todos los cambios hechos desde la creación del repositorio. Para hacer eso, tenemos dos <i>keywords</i>: <i>show</i> y <i>diff</i>.</p>
@@ -323,8 +323,8 @@ bg-??.jpg
 
 		<!-- Tabline -->
 		
-		<details open>
-			<summary><h3>Rebase <span class="span_h">Git</span></h3></summary>
+		<details>
+			<summary><h3><i>Rebase</i> <span class="span_h">Fusión Agresiva</span></h3></summary>
 
 			<div class="section_content">
 				
@@ -342,11 +342,19 @@ bg-??.jpg
 
 				<figure><img src="./images/rebase-rebase-01.svg" alt="Ejemplo de rebase"></figure>
 
-				<p>Consideramos que <i>rebase</i> es una <b>mala práctica</b> porque cambia la confirmación base donde se originan los cambios. Con eso queremos decir que el primer <i>commit</i> de la rama a fusionar se cambia de su lugar de origen real.</p>
+				<hr>
+
+				<p>Este comando se debe ejecutar igual que <i>git merge</i>, es decir, sobre la rama principal. Pero antes de eso, es buena idea ejecutarlo desde la rama secundaria para establecer el commit base sobre el <span><i>HEAD</i></span> de <i>master</i>. De la siguiente manera:</p>
+
+				<pre class="container_code"><code class="linux_code properties">git checkout bug_fix</code><br><code class="linux_code properties">git rebase master</code></pre>
 
 				<p>Una forma de visualizar el cambio es la siguiente:</p>
 
 				<figure><img src="./images/rebase-rebase-02.svg" alt="Ejemplo de rebase"></figure>
+
+				<p>Ahora sí podremos ejecutar <i>git rebase</i> sin problemas sobre la rama principal:</p>
+
+				<pre class="container_code"><code class="linux_code properties">git checkout master</code><br><code class="linux_code properties">git rebase bug_fix</code></pre>
 
 				<blockquote cite="https://platzi.com/comentario/1348679/">
 					<h4>"No reorganices el historial público</h4>
@@ -354,18 +362,125 @@ bg-??.jpg
 					<p>Nunca debes reorganizar las confirmaciones una vez que se hayan enviado a un repositorio público. La reorganización sustituiría las confirmaciones antiguas por las nuevas y parecería que esa parte del historial de tu proyecto se hubiera desvanecido de repente."</p>
 
 					<a rel="noopener noreferrer" href="https://platzi.com/comentario/1348679/" target="_blank">@diazpolanco13</a>
-				
 				</blockquote>
-
-				<p>Por último recordarte que se debe ejecutar igual que <i>git merge</i>, es decir, sobre la rama principal. Pero antes de eso, es buena idea ejecutarlo desde la rama secundaria para evitar conflictos. De la siguiente manera:</p>
-				<span class="container_code">
-					<pre><code class="linux_code properties">git rebase</code><br><code class="linux_code properties">git stash</code></pre>
-				</span>
-
 
 			</div>
 		</details>
 		
+		<!-- Tabline -->
+				
+		<details>
+			<summary><h3><i>Stash</i> <span class="span_h">Guardar cambios temporalmente</span></h3></summary>
+
+			<div class="section_content">
+					
+				<p>El comando <i>git stash</i> almacena temporalmente (o guarda en un <i>stash</i>) los cambios que hayas efectuado en el código en el que estás trabajando para que puedas trabajar en otra cosa y, más tarde, regresar y volver a aplicar los cambios más tarde. Guardar los cambios en stashes resulta práctico si tienes que cambiar rápidamente de contexto y ponerte con otra cosa, pero estás en medio de un cambio en el código y no lo tienes todo listo para confirmar los cambios.</p>
+
+				<p>Imagina que estás en la rama <i>master</i> haciendo tu trabajo, y quieres ir a otra rama para ver algunos cambios. Una solución sería hacer <i>commit</i> a tu avance y cambiar de rama ¿cierto? Pero, qué pasa cuando los cambios no están listos para ser confirmados. Una solución es guardarlos en el <i>staging area</i> y volver a ellos cuando sea necesario</p>
+
+				<h4><i>Stashed</i></h4>
+
+				<p>El <i>stashed</i> sirve para guardar cambios que serán necesarios en otro momento, <b>es una lista de estados</b> que guarda los cambios que hemos hecho en el <i>staging area</i>, para poder cambiar de rama sin perder el trabajo que todavía no guardamos en un <i>commit</i>.</p>
+
+				<p>Una vez almacenados los cambios del <i>staging area</i>, te permite cambiar de ramas, hacer cambios en los archivos, trabajar en otras cosas sin preocupaciones y, más adelante, retomar el trabajo con los archivos que tenías guardados en ese <i>stash</i>.</p>
+
+				<h4>Guardar cambios en un <i>stash</i></h4>
+
+				<p><i>git stash</i> coge los cambios sin confirmar (tanto los que están preparados como los que no), los guarda aparte para usarlos más adelante y, acto seguido, los deshace en el código en el que estás trabajando (Regresa al último <i>commit</i>).</p>
+
+				<p>Un <i>stash</i> se crea de forma muy simple. Únicamente tienes que ejecutar el siguiente comando:</p>
+
+				<pre class="container_code"><code class="linux_code properties">git stash</code></pre>
+				
+				<h4>Volver a aplicar los cambios de un <i>stash</i></h4>
+				
+				<p>Para volver a aplicar los cambios almacenados en el <i>stash</i>, sólo debes ejecutar el siguiente comando:</p>
+				
+				<pre class="container_code"><code># Traer los cambios del último stash y eliminarlo</code><br><code class="linux_code properties">git stash pop</code><br><br><code># Traer los cambios del último stash y mantenerlo</code><br><code class="linux_code properties">git stash apply</code></pre>
+				
+				<p><i>Stash apply</i> resulta especialmente útil si quieres aplicar los mismos cambios de un stash en varias ramas.</p>
+				
+				<p>De forma predeterminada, <i>git stash pop</i> volverá a aplicar el último stash creado: <i>stash@{0}</i>. Puedes elegir el stash que deseas volver a aplicar poniendo su identificador como último argumento, por ejemplo:</p>
+				
+				<pre class="container_code"><code class="linux_code properties">git stash pop stash@{2}</code></pre>
+
+				<h4>Gestión de varios <i>stashes</i></h4>
+
+				<p>No tienes por qué limitarte a usar un stash a la vez. Puedes guardar tantos como necesites. Si deseas ver la lista de los <i>stashes</i> guardados sólo debes ejecutar el siguiente comando:</p>
+				
+				<pre class="container_code"><code class="linux_code properties">git stash list</code></pre>
+				
+				<p>A medida que avances y veas que tu flujo de trabajo con <i>git stash</i> se vuelve más complejo, notarás que es muy difícil identificar el <i>stash</i> correcto con los cambios que estás buscando. Para hacer hacer esta tarea más fácil. Se le puede añadir una etiqueta a cada <i>stash</i> que necesites crear. Eso se hace de la siguiente manera:</p>
+				
+				<pre class="container_code"><code class="linux_code properties">git stash save "Estilos añadidos al sitio"</code></pre>
+				
+				<h4>Eliminar <i>stashes</i></h4>
+				
+				<p>Por último, para eliminar un <i>stash</i> que no necesitas sólo debes ejecutar el siguiente comando:</p>
+				
+				<pre class="container_code"><code># Eliminar el útimo stash creado</code><br><code class="linux_code properties">git stash drop</code><br><br><code># Si conoces el identificador del stash en el que estás trabajando puedes especificarlo</code><br><code class="linux_code properties">git stash drop stash@{2}</code><br><br><code># Para eliminar todos los stashes</code><br><code class="linux_code properties">git stash clear</code></pre>			
+
+				<h4>Crear Ramas a partir del <i>stash</i></h4>
+				
+				<p>Puedes crear una nueva rama a partir de los cambios almacenados en tu <i>stash</i>. Para eso puedes usar el siguiente comando:</p>
+				
+				<pre class="container_code"><code class="linux_code properties">git stash branch "nombre de la rama"</code></pre>
+				
+			</div>
+		</details>
+
+		<!-- Tabline -->
+				
+		<details>
+			<summary><h3><i>Clean</i> <span class="span_h">Limpiar el espacio de trabajo</span></h3></summary>
+
+			<div class="section_content">
+				
+				<p>A veces creamos archivos cuando estamos realizando nuestro proyecto que realmente no forman parte de nuestro directorio de trabajo, que no se deberían agregar. Para eliminar de nuestro espacio de trabajo estos archivos, usamos el comando <i>git clean</i>.</p>
+
+				<p>Algunos ejemplos de archivos que no son parte de nuestro proyecto pueden ser <i>.logs</i>, resultados de alguna compilación o imágenes fuera de los directorios ignorados. Para ejecutar este comando usamos los siguientes comandos:</p>
+
+				<pre class="container_code"><code># Mostrar lista de los archivos que serán eliminados</code><br><code class="linux_code properties">git clean --dry-run</code><br><br><code># Borrar los archivos listados (excepto carpetas)</code><br><code class="linux_code properties">git clean -f</code></pre>
+
+			</div>
+		</details>
+
+		<!-- Tabline -->
+				
+		<details>
+			<summary><h3><i>Cherry-pick</i> <span class="span_h">Git</span></h3></summary>
+
+			<div class="section_content">
+				
+				<p><b>Cherry-pick</b> es un comando muy útil para traer los cambios de un <i>commit</i> con locación en otra rama del repositorio. Puedes ver de forma gráfica lo que hace este comando:</p>
+
+				<figure><img src="./images/cherry-pick.svg" alt="Representación gráfica de cherry pick"></figure>
+
+				<p>Para ejecutar este comando debes indicar el <i>commit</i> del que vas a traer los cambios. Se ejecuta de la siguiete manera:</p>
+
+				<pre class="container_code"><code class="linux_code properties">git cherry-pick 1e6176f</code></pre>
+
+			</div>
+		</details>
+
+		<!-- Tabline -->
+				
+		<details open>
+			<summary><h3>Úsese en caso de emergencia <span class="span_h"><i>amend, reset, reflog y grep</i></span></h3></summary>
+
+			<div class="section_content">
+				
+				<p><b>Cherry-pick</b> es un comando muy útil para traer los cambios de un <i>commit</i> con locación en otra rama del repositorio. Puedes ver de forma gráfica lo que hace este comando:</p>
+
+				<figure><img src="./images/cherry-pick.svg" alt="Representación gráfica de cherry pick"></figure>
+
+				<p>Para ejecutar este comando debes indicar el <i>commit</i> del que vas a traer los cambios. Se ejecuta de la siguiete manera:</p>
+
+				<pre class="container_code"><code class="linux_code properties">git cherry-pick 1e6176f</code></pre>
+
+			</div>
+		</details>
+
 		<!-- Tabline -->
 	
 	</details>
