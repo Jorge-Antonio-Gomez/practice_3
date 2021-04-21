@@ -73,7 +73,7 @@
 	<div class="section_content">
 		<p>Sección de entrenamiento para usar Git y GitHub con una terminal.</p>
 		<p>El contenido de aprendizaje se encuentra en <a href="https://platzi.com/" target="_blank">Platzi</a>, en la siguiente liga: <a href="https://platzi.com/cursos/git-github/" target="_blank">https://platzi.com/cursos/git-github/</a></p>
-	</div>
+	</div>	
 
 		<!-- Tabline -->
 
@@ -466,17 +466,15 @@ bg-??.jpg
 		<!-- Tabline -->
 				
 		<details open>
-			<summary><h3>Úsese en caso de emergencia <span class="span_h"><i>amend, reset, reflog y grep</i></span></h3></summary>
+			<summary><h3><i>Amend, Reset, Reflog y Grep</i> <span class="span_h">Úsese en caso de emergencia</span></h3></summary>
 
 			<div class="section_content">
-				
-				<p><b>Cherry-pick</b> es un comando muy útil para traer los cambios de un <i>commit</i> con locación en otra rama del repositorio. Puedes ver de forma gráfica lo que hace este comando:</p>
+			
+				<h4>Reconstruir commits con <i>Git amend</i>.</h4>
 
-				<figure><img src="./images/cherry-pick.svg" alt="Representación gráfica de cherry pick"></figure>
+				<p>Seguramente te ha pasado que publicas un <i>commit</i> que aun no estaba listo. Pero te das cuenta después de haberlo confirmado. <i>Amend</i> es un comando que justamente sirve para "remendar" los errores del último <i>commit</i> enviado. Con él puedes modificar tanto el mensaje como los archivos o cambios que involucra. Para invocarlo solo tienes que añadir los cambios con que faltaron con <i>git add .</i> y luego publicar un nuevo mensaje para ese <i>commit</i>. Eso se hace de la siguiente manera:</p>
 
-				<p>Para ejecutar este comando debes indicar el <i>commit</i> del que vas a traer los cambios. Se ejecuta de la siguiete manera:</p>
-
-				<pre class="container_code"><code class="linux_code properties">git cherry-pick 1e6176f</code></pre>
+				<pre class="container_code"><code class="properties"># Para Añadir nuevos cambios.</code><br><code class="linux_code properties">git add .</code><br><br><code class="properties"># Para corregir el mensaje y guardar los cambios.</code><br><code class="linux_code properties">git amend -m "Añadidos estilos de mi website"</code></pre>
 
 			</div>
 		</details>
